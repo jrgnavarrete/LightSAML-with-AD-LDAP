@@ -1,0 +1,6 @@
+{
+    "require": {
+        "symfony/symfony": "^5.4",
+        "lightsaml/lightsaml": "^2.3"
+    }
+}
