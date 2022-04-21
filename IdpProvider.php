@@ -25,7 +25,7 @@ class IdpProvider {
    * @return string
    */
   public function getIdPId(){
-    return "http://localhost/pruebasLightSAML4/";
+    return "http://localhost/pruebasLightSAML5/";
   }
 
   /**
@@ -59,7 +59,7 @@ class IdpProvider {
   // Returns true if the user exists
   public function userExists($username, $password){
 
-    if ($username == 'jorge' && $password == 'usuario'){
+    if ($username == 'jorge' && $password == 'usuario' || $username == 'admin' && $password == 'admin'){
       return true;
     } else {
       return false;

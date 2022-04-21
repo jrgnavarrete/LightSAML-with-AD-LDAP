@@ -117,8 +117,6 @@ class IdpTools{
     //$response->serialize($serializationContext->getDocument(), $serializationContext);
     //print_r ($serializationContext->getDocument()->saveXML());
     // Set the postback url obtained from the trusted SPs as the destination.
-    $response->setDestination($acsUrl);
-
-      return $response;
+    return $response;
   }
 }
