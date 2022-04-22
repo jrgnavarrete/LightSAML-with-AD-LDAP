@@ -38,9 +38,6 @@ class IdpTools{
 
     $acsUrl = $idpProvider->getServiceProviderAcs($issuer);
 
-    // Preparing the response XML
-      $serializationContext = new \LightSaml\Model\Context\SerializationContext();
-
       // We now start constructing the SAML Response using LightSAML.
       $response = new \LightSaml\Model\Protocol\Response();
       $response
@@ -53,6 +50,7 @@ class IdpTools{
           ->setID(\LightSaml\Helper::generateID())
           ->setIssueInstant(new \DateTime())
           ->setDestination($acsUrl)
+          ->setInResponseTo($id)
           // We obtain the Entity ID from the Idp.
           ->setIssuer(new \LightSaml\Model\Assertion\Issuer($idpProvider->getIdPId()))
       ;

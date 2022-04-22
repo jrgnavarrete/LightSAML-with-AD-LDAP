@@ -47,7 +47,7 @@ class IdpProvider {
   }
 
   /**
-   * Returns a dummy user email.
+   * Returns an example user email.
    *
    * @return string
    */
@@ -64,7 +64,6 @@ class IdpProvider {
     } else {
       return false;
     }
-
   }
 
 }
