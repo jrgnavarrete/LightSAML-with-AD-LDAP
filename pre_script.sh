@@ -43,7 +43,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             else
                 docker run -d -e KEYCLOAK_USER=$name -e KEYCLOAK_PASSWORD=$password -e KEYCLOAK_LOGLEVEL=DEBUG -p 8080:8080 jboss/keycloak
             fi
-            
         fi
     else
             echo "${RED}You need Internet connection${NC}"
