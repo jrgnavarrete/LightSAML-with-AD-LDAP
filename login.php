@@ -16,6 +16,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
 </head>
 
 <body>
+<script type="text/javascript" src="validation.js"></script>
 <div class="container">
 	<div class="screen">
 		<div class="screen__content">
