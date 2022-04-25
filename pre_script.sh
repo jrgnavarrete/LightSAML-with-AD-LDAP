@@ -23,6 +23,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
             php composer-setup.php
             php -r "unlink('composer-setup.php');"
             apt -y install php-xml
+            apt install -y php-ldap
             service apache2 restart
             mv composer.phar /usr/local/bin/composer
             #composer require lightsaml/lightsaml
