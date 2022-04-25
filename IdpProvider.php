@@ -25,7 +25,7 @@ class IdpProvider {
    * @return string
    */
   public function getIdPId(){
-    return "http://localhost/pruebasLightSAML5/";
+    return "http://172.28.9.139/";
   }
 
   /**
@@ -58,12 +58,22 @@ class IdpProvider {
 
   // Returns true if the user exists
   public function userExists($username, $password){
+    $ldapconfig['host'] = '172.28.9.138'; //CHANGE THIS TO THE CORRECT LDAP SERVER
+    $ldapconfig['port'] = '389';
+    $ldapconfig['basedn'] = 'dc=SAMLtest,dc=local';//CHANGE THIS TO THE CORRECT BASE DN
+    $ldapconfig['usersdn'] = 'cn=Users';//CHANGE THIS TO THE CORRECT USER OU/CN
+    $ds=ldap_connect($ldapconfig['host'], $ldapconfig['port']) or die ('Conexión incorrecta con servidor LDAP');
 
-    if ($username == 'jorge' && $password == 'usuario' || $username == 'admin' && $password == 'admin'){
+    ldap_set_option($ds, LDAP_OPT_PROTOCOL_VERSION, 3);
+    ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
+    ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
+
+    $dn="cn=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
+
+    if ($bind=ldap_bind($ds, $dn, $password)) {
       return true;
     } else {
       return false;
     }
   }
-
 }
