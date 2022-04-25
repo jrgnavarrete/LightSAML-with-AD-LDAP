@@ -10,4 +10,4 @@ The Service Provider is Keycloak, but if you want to use it, you have to create 
 
 The code is based on: https://github.com/Prosple/saml_idp_example & https://github.com/lightSAML/lightSAML.
 
-![demo(3)](https://user-images.githubusercontent.com/91310398/165083187-c4f8957f-7581-47fd-9ce2-ebbde49d4fff.gif)
+![demo](https://user-images.githubusercontent.com/91310398/165100701-593e0b60-47be-41e9-a183-082f7f580717.gif)
