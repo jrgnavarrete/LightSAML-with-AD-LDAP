@@ -96,6 +96,7 @@ class IdpTools{
                     // Setting the user email address.
                     $user_email
                   ))
+                  // ADD YOUR ATTRIBUTES
           )
           ->addItem(
               (new \LightSaml\Model\Assertion\AuthnStatement())

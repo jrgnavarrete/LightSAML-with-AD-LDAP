@@ -4,7 +4,7 @@ class IdpProvider {
 
   // Defining some trusted Service Providers.
   private $trusted_sps = [
-    'urn:service:provider:id' => 'http://localhost:8080/auth/realms/test'
+    'urn:service:provider:id' => 'http://localhost:8080/auth/realms/test' // CHANGE THIS TO THE SP URL
   ];
 
   /**
@@ -25,7 +25,7 @@ class IdpProvider {
    * @return string
    */
   public function getIdPId(){
-    return "http://172.28.9.139/";
+    return "http://172.28.9.139/login.php"; // CHANGE THIS TO THE IP OF YOUR IDP (THIS SERVER)
   }
 
   /**
@@ -68,9 +68,11 @@ class IdpProvider {
     ldap_set_option($ds, LDAP_OPT_REFERRALS, 0);
     ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 
-    $dn="cn=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
+    // If you want to validate user with their DistinguishedName, use $dn instead of $username below
+    // Right now it's going to validate only with the UserPrincipalName or de Name
+    // $dn="cn=".$username.",".$ldapconfig['usersdn'].",".$ldapconfig['basedn'];
 
-    if ($bind=ldap_bind($ds, $dn, $password)) {
+    if ($bind=ldap_bind($ds, $username, $password)) {
       return true;
     } else {
       return false;

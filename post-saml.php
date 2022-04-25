@@ -23,7 +23,7 @@ $idpTools = new IdpTools();
 
 // Check if the user exists. If it doesn't, we are redirecting the user to the login.php with the SAMLRequest and the RelayState
 if (!$idpProvider->userExists($_GET['username'],$_GET['password'])){
-    header("Location: login2.php?SAMLRequest=" . urlencode($_GET['SAMLRequest']) . "&RelayState=" . urlencode($_GET['RelayState']) . "&fail=true");
+    header("Location: login.php?SAMLRequest=" . urlencode($_GET['SAMLRequest']) . "&RelayState=" . urlencode($_GET['RelayState']) . "&fail=true");
     exit();
 };
 
@@ -41,7 +41,7 @@ $user_email = $idpProvider->getUserEmail();
 
 // Construct a SAML Response.
 $response = $idpTools->createSAMLResponse($idpProvider, $user_id, $user_email, $issuer, $id);
-$response -> setDestination($issuer . '/broker/saml/endpoint');
+$response -> setDestination($issuer . '/broker/SAMLTest/endpoint'); // CHANGE THIS TO THE SP ENDPOINT URL
 //print_r ($idpProvider); print_r ($user_id); print_r ($user_email);print_r ($issuer);print_r ($id);
 //print_r ($response);
 
