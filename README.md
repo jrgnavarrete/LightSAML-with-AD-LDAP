@@ -6,7 +6,7 @@ In order to use this server for testing purposes, in "post-saml.php" you have to
 
 You can uncomment the lines in the "userExists" function of the "IdpProvider.php" file if you want to check credentials using the DistinguishedName instead of the UserPrincipalName.
 
-The Service Provider is Keycloak, but if you want to test it with Keycloak, you have to create a new Realm and add this server as an Identity Provider.
+The Service Provider is Keycloak, but if you want to use it, you have to create a new Realm and add this server as an Identity Provider.
 
 The code is based on: https://github.com/Prosple/saml_idp_example & https://github.com/lightSAML/lightSAML.
 
