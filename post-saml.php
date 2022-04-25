@@ -1,3 +1,6 @@
+<?php
+ob_start();
+?>
 <link rel="stylesheet" href="styles/stylesloading.css" type="text/css">
 <div class="middle">
   <div class="bar bar1"></div>
@@ -61,3 +64,4 @@ $message->setRelayState($request->get('RelayState'));
 $messageContext->setMessage($message);
 $httpResponse = $postBinding->send($messageContext);
 print ($httpResponse);
+ob_end_flush();
