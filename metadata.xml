@@ -20,6 +20,6 @@
       </ds:KeyInfo>
     </md:KeyDescriptor>
     <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
-    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost/pruebasLightSAML5/login.php"/>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://CHANGE_THIS_FOR_YOUR_SAMLSERVER_IP/login.php"/>
   </md:IDPSSODescriptor>
 </md:EntityDescriptor>
