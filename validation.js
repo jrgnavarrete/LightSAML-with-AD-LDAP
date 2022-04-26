@@ -12,4 +12,9 @@ const validateForm = () => {
         alert("Petición incorrecta.");
         return false;
     }
+    var format = /[!#$%^&*()_+\-=\[\]{};':"\\|,<>\/?]+/;
+    if(format.test(document.getElementById('SAMLRequest').value)){
+        alert("No se permiten caracteres especiales.");
+        return false;
+    }
 }
